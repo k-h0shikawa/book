@@ -1,6 +1,6 @@
 package com.sample.app.money;
 
-class Money {
+class Money implements Expressin {
     protected int amount;
     
     protected String currency;
@@ -34,4 +34,9 @@ class Money {
     static Money franc(int amount) {
         return new Money(amount, "CHF");
     }
+    
+    Expressin plus(Money addend) {
+        return new Money(amount + addend.amount, this.currency);
+    }
+
 }
