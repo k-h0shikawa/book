@@ -14,7 +14,7 @@ class Sum implements Expressin {
      * @param to 変換先の通貨
      * @return 加算結果のMoneyオブジェクト
      */
-    public Money reduce(String to) {
+    public Money reduce(Bank bank, String to) {
         int amount = this.augend.amount + this.addend.amount;
         return new Money(amount, to);
     }

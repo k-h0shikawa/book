@@ -1,7 +1,7 @@
 package com.sample.app.money;
 
 class Money implements Expressin {
-    
+
     protected int amount;
     protected String currency;
 
@@ -24,8 +24,9 @@ class Money implements Expressin {
         return this.amount + " " + this.currency;
     }
 
-    public Money reduce(String to) {
-        return this;
+    public Money reduce(Bank bank, String to) {
+        int rate = bank.rate(this.currency, to);
+        return new Money(this.amount / rate, to);
     }
 
     String currency() {

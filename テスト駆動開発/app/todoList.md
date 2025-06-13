@@ -19,7 +19,7 @@
  - [ ] $5 + $5 = $10
  - [ ] $5 + $5がMoneyを返す
  - [x] Bank.reduce(Money)
- - [ ] Moneyを変換して換算を行う
- - [ ] Reduce(Bank, String)
+ - [x] Moneyを変換して換算を行う
+ - [x] Reduce(Bank, String)
 
 
