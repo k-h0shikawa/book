@@ -1,12 +1,16 @@
 package com.sample.app.money;
 
 class Sum implements Expressin {
-    Money augend; // 加算される側
-    Money addend; // 加算する側
+    Expressin augend; // 加算される側
+    Expressin addend; // 加算する側
 
-    Sum(Money augend, Money addend) {
+    Sum(Expressin augend, Expressin addend) {
         this.augend = augend;
         this.addend = addend;
+    }
+
+    public Expressin plus(Expressin addend) {
+        return null;
     }
 
     /**
@@ -15,7 +19,9 @@ class Sum implements Expressin {
      * @return 加算結果のMoneyオブジェクト
      */
     public Money reduce(Bank bank, String to) {
-        int amount = this.augend.amount + this.addend.amount;
+        int amount = this.augend.reduce(bank, to).amount 
+                        + this.addend.reduce(bank, to).amount;
+
         return new Money(amount, to);
     }
 }

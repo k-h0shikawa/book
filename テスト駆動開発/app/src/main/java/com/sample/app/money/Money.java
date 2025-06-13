@@ -10,7 +10,7 @@ class Money implements Expressin {
         this.currency = currency;        
     }
 
-    public Money times(int multiplier) {
+    public Expressin times(int multiplier) {
         return new Money(this.amount * multiplier, currency);
     }
 
@@ -40,7 +40,7 @@ class Money implements Expressin {
         return new Money(amount, "CHF");
     }
     
-    Expressin plus(Money addend) {
+    public Expressin plus(Expressin addend) {
         return new Sum(this, addend);
     }
 
