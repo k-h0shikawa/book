@@ -5,3 +5,5 @@
  - [ ] amountをprivateにする
  - [x] Dollarの副作用どうする？
  - [ ] Moneyの丸目処理をどうする？
+ - [x] equals()
+ - [ ] hashCode()
