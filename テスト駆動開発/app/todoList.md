@@ -16,4 +16,10 @@
  - [x] FrancとDollarを比較する
  - [x] 通貨の概念
  - [x] testFrancMultiplication()を削除するか？
+ - [ ] $5 + $5 = $10
+ - [ ] $5 + $5がMoneyを返す
+ - [x] Bank.reduce(Money)
+ - [ ] Moneyを変換して換算を行う
+ - [ ] Reduce(Bank, String)
+
 

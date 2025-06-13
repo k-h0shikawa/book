@@ -1,8 +1,8 @@
 package com.sample.app.money;
 
 class Money implements Expressin {
-    protected int amount;
     
+    protected int amount;
     protected String currency;
 
     Money(int amount, String currency) {
@@ -17,11 +17,15 @@ class Money implements Expressin {
     public boolean equals(Object object) {
         Money money = (Money) object;
         return this.amount == money.amount && 
-               this.currency().equals(money.currency());
+                this.currency().equals(money.currency());
     }
 
     public String toString() {
         return this.amount + " " + this.currency;
+    }
+
+    public Money reduce(String to) {
+        return this;
     }
 
     String currency() {
@@ -36,7 +40,7 @@ class Money implements Expressin {
     }
     
     Expressin plus(Money addend) {
-        return new Money(amount + addend.amount, this.currency);
+        return new Sum(this, addend);
     }
 
 }

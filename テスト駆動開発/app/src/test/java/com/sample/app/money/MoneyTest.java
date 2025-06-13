@@ -31,9 +31,33 @@ public class MoneyTest {
         Money five = Money.dollar(5);
         Expressin sum = five.plus(five);
         Bank bank = new Bank();
-        Money reduced = bank.reduce(sum, "USD");
+        Money reduced = bank.reduce(sum, "USD"); // reduceは式変形の意
         assertEquals(Money.dollar(10), reduced);
-        
+    }
+
+    @Test
+    public void testPlusReturnsSum(){
+        // 内部の実装に深く関係した短命のテスト
+        Money five = Money.dollar(5);
+        Expressin result = five.plus(five);
+        Sum sum = (Sum) result;
+        assertEquals(five, sum.augend); // augendは加算される側
+        assertEquals(five, sum.addend); // addendは加算する側
+    }
+
+    @Test
+    public void testReduceSum() {
+        Expressin sum = new Sum(Money.dollar(3), Money.dollar(4));
+        Bank bank = new Bank();
+        Money result = bank.reduce(sum, "USD");
+        assertEquals(Money.dollar(7), result);
+    }
+
+    @Test
+    public void testReduceMoney() {
+        Bank bank = new Bank();
+        Money result = bank.reduce(Money.dollar(1), "USD");
+        assertEquals(Money.dollar(1), result);
     }
 
 }
