@@ -9,8 +9,12 @@ class Sum implements Expressin {
         this.addend = addend;
     }
 
+    public Expressin times(int multiplier) {
+        return new Sum(augend.times(multiplier), addend.times(multiplier));
+    }
+
     public Expressin plus(Expressin addend) {
-        return null;
+        return new Sum(this, addend);
     }
 
     /**

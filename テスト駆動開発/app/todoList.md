@@ -1,6 +1,6 @@
 # タスクリスト
 
- - [ ] $5 + 10 CHF = $10（レートが2:1の場合） 
+ - [x] $5 + 10 CHF = $10（レートが2:1の場合） 
  - [x] $5 * 2 = $10
  - [x] amountをprivateにする
  - [x] Dollarの副作用どうする？
@@ -21,7 +21,7 @@
  - [x] Bank.reduce(Money)
  - [x] Moneyを変換して換算を行う
  - [x] Reduce(Bank, String)
- - [ ] Sum.plus
- - [ ] Expression.times
+ - [x] Sum.plus
+ - [x] Expression.times
 
 
